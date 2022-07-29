@@ -1,14 +1,13 @@
 const express = require("express");
 const cors = require('cors');
 const app = express();
-const port = 8888;
+const port = 8889;
 
-const server = app.listen(8888, function(){
+const server = app.listen(port, function(){
   console.log("Node.js is listening to PORT:" + server.address().port);
 });
 app.use(cors());
 app.use(express.json());
-
 
 const messages = [
   {
