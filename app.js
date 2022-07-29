@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const app = express();
-const port = 8889;
+const port = 8888;
 
 const server = app.listen(port, function(){
   console.log("Node.js is listening to PORT:" + server.address().port);
