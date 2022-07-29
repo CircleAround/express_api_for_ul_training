@@ -24,6 +24,12 @@ const messages = [
   }
 ]
 
+const todos = [
+  {id: 1, text: 'task1', done: false },
+  {id: 2, text: 'task2', done: false },
+  {id: 3, text: 'task3', done: false }
+]
+
 app.get("/", (req, res) => {
   res.status(200).send("Express!!");
 });
@@ -37,4 +43,14 @@ app.post('/api/messages', function (req, res, next) {
   const data = { id: messages.length + 1, message: req.body.message }
   messages.push(data)
   res.json(data)
-})
+});
+
+app.get("/api/todos", function(req, res, next){
+  res.json(todos);
+});
+
+app.post('/api/todos', function (req, res, next) {
+  const data = { id: messages.length + 1, text: req.body.text, done: false  }
+  todos.push(data)
+  res.json(data)
+});
