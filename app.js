@@ -50,7 +50,7 @@ app.get("/api/todos", function(req, res, next){
 });
 
 app.post('/api/todos', function (req, res, next) {
-  const data = { id: messages.length + 1, text: req.body.text, done: false  }
+  const data = { id: todos.length + 1, text: req.body.text, done: false  }
   todos.push(data)
   res.json(data)
 });
